@@ -7,36 +7,37 @@ using UnityEngine.UI;
 public class UIManager : Observer
 {
     private PlayerMovement player;
-    public GameObject checkpointTextObject;
-    private int score;
+    public GameObject scoreTextObject;
+    private int _score;
 
     private void Awake()
     {
-        if (checkpointTextObject == null)
+        if (scoreTextObject == null)
         {
-            checkpointTextObject.SetActive(true);
-            checkpointTextObject = GameObject.Find("score");
+            
+            scoreTextObject.SetActive(true);
+            scoreTextObject = GameObject.Find("score");
         }
 
     }
 
     private void Start()
     {
-        checkpointTextObject = GameObject.Find("score");
+        scoreTextObject = GameObject.Find("score");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (checkpointTextObject != null)
+        if (scoreTextObject != null)
         {
-            checkpointTextObject.GetComponent<Text>().text = ("Score:" + score);
+            scoreTextObject.GetComponent<Text>().text = ("Score:" + _score.ToString());
         }
     }
 
     public override void Notify(Subject subject)
     {
         player = subject.GetComponent<PlayerMovement>();
-        score = player.score;
+        _score = player.score;
     }
 }

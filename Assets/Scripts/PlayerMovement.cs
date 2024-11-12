@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Subject
 {
     private float horizontal;
     private float speed = 8f;
@@ -13,16 +14,38 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-
     public int score;
+
+    private UIManager uiManager;
+    private void Awake()
+    {
+        uiManager = (UIManager)FindObjectOfType(typeof(UIManager));
+    }
 
     private void Start()
     {
+        
         score = 0;    
     }
 
     // Update is called once per frame
     void Update()
+    {
+        Move();
+        NotifyObservers();
+    }
+
+    private void OnEnable()
+    {
+        Attach(uiManager);
+    }
+
+    private void OnDisable()
+    {
+        Detach(uiManager);
+    }
+
+    private void Move()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
@@ -37,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Flip();
-
     }
 
     private bool isGrounded()
@@ -63,9 +85,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "Key")
+        if (collision.gameObject.name == "Key")
         {
+            Debug.Log("key got!");
             score = score + 1000;
+            collision.gameObject.SetActive(false);
+        }
+
+        if (collision.gameObject.tag == "Fruit")
+        {
+            Debug.Log("fruit got!");
+            score = score + 500;
+            collision.gameObject.SetActive(false);
         }
     }
 }
