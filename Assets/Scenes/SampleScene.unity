@@ -1111,6 +1111,7 @@ GameObject:
   - component: {fileID: 830596183}
   - component: {fileID: 830596182}
   - component: {fileID: 830596181}
+  - component: {fileID: 830596184}
   m_Layer: 0
   m_Name: apple
   m_TagString: Fruit
@@ -1218,6 +1219,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830596179}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &830596184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830596179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 940938122, guid: 60a67a705a937014687a97d5af5492be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreRewarded: 500
 --- !u!1 &879911303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,8 +1465,9 @@ GameObject:
   - component: {fileID: 967543475}
   - component: {fileID: 967543474}
   - component: {fileID: 967543473}
+  - component: {fileID: 967543476}
   m_Layer: 0
-  m_Name: apple (2)
+  m_Name: apple
   m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1558,6 +1573,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967543471}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &967543476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967543471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 940938122, guid: 60a67a705a937014687a97d5af5492be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreRewarded: 500
 --- !u!1 &1145427707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2064,7 @@ GameObject:
   - component: {fileID: 1724761574}
   - component: {fileID: 1724761573}
   - component: {fileID: 1724761576}
+  - component: {fileID: 1724761577}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -2153,6 +2182,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1724761577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724761571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 940938122, guid: 60a67a705a937014687a97d5af5492be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreRewarded: 1000
 --- !u!1 &1768400630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2165,8 +2207,9 @@ GameObject:
   - component: {fileID: 1768400634}
   - component: {fileID: 1768400633}
   - component: {fileID: 1768400632}
+  - component: {fileID: 1768400635}
   m_Layer: 0
-  m_Name: apple (1)
+  m_Name: apple
   m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2272,6 +2315,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768400630}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1768400635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768400630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 940938122, guid: 60a67a705a937014687a97d5af5492be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreRewarded: 500
 --- !u!1 &1814179013
 GameObject:
   m_ObjectHideFlags: 0

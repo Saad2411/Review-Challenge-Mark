@@ -1,7 +1,7 @@
+using ReviewBonus;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerMovement : Subject
 {
@@ -85,18 +85,10 @@ public class PlayerMovement : Subject
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Key")
+        if (collision != null)
         {
-            Debug.Log("key got!");
-            score = score + 1000;
-            collision.gameObject.SetActive(false);
-        }
-
-        if (collision.gameObject.tag == "Fruit")
-        {
-            Debug.Log("fruit got!");
-            score = score + 500;
-            collision.gameObject.SetActive(false);
+            score += collision.GetComponent<Objectives>().RewardScore();
+            gameObject.SetActive(false);
         }
     }
 }
