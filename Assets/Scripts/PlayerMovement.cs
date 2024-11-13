@@ -88,7 +88,7 @@ public class PlayerMovement : Subject
         if (collision != null)
         {
             score += collision.GetComponent<Objectives>().RewardScore();
-            gameObject.SetActive(false);
+            collision.gameObject.SetActive(false);
         }
     }
 }
